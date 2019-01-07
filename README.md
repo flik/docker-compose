@@ -75,5 +75,5 @@ docker stop container_id
 # remove container
  docker container rm container_name
  
-# remove container running in swarm mode  
+# remove container runing in swarm mode  
 docker service rm container_name
