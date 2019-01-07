@@ -53,3 +53,15 @@ docker exec -it container-name/id command-to-run
 
 dokcer exec -it contanoer-name /bin/bash
 ////////////////
+
+# Check logs
+docker logs --tail 50 --follow --timestamps container_id
+docker-compose -f logs
+
+# Kill container
+docker kill container_id
+
+# stop container
+docker stop container_id
+
+
