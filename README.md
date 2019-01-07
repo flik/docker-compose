@@ -43,6 +43,14 @@ curl -XGET 'localhost:9200/_cluster/health?pretty'
 # Run command in docker image a way:
 docker exec -it xone_web composer  update
 
+# check runninng container
+docker ps
+
+# check running container in swarm mode
+docker service ls
+
+
+
 # Enter in a docker image:
 docker ps
 
@@ -66,3 +74,6 @@ docker stop container_id
 
 # remove container
  docker container rm container_name
+ 
+# remove container running in nswarm mode  
+docker service rm container_name
