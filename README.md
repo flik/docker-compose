@@ -64,4 +64,5 @@ docker kill container_id
 # stop container
 docker stop container_id
 
-
+# remove container
+ docker container rm container_name
