@@ -66,6 +66,15 @@ dokcer exec -it contanoer-name /bin/bash
 docker logs --tail 50 --follow --timestamps container_id
 docker-compose -f logs
 
+ # How to Save Docker Image:
+ //check docker images with names
+$ docker ps
+
+$ docker save image-name > folder-path/anyname.tar
+
+# How to load Docker Image:
+$ docker load < folder-path/image.tar
+
 # Kill container
 docker kill container_id
 
