@@ -1,4 +1,4 @@
 <?php
-echo "Server Hostname is:"; echo gethostname();
+echo "Server 1 Hostname is:"; echo gethostname();
 ?>
 

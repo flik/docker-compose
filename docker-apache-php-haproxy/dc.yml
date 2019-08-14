@@ -1,37 +1,6 @@
 version: '3'
  
 services:
-
-    mysql:
-        image: mysql:5.7
-        expose:
-            - 3306
-        ports:
-            - 3306:3306
-        environment:
-            - MYSQL_DATABASE=xone
-            - MYSQL_USER=xone
-            - MYSQL_PASSWORD=xone
-            - MYSQL_ROOT_PASSWORD=xone
-        command: mysqld --key-buffer-size=32M --max-allowed-packet=16M --myisam-recover-options=FORCE,BACKUP --tmp-table-size=32M --query-cache-type=0 --query-cache-size=0 --max-heap-table-size=32M --max-connections=500 --thread-cache-size=50 --innodb-flush-method=O_DIRECT --innodb-log-file-size=512M --innodb-buffer-pool-size=16G --open-files-limit=65535
-
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        container_name: phpmyadmin
-        restart: always
-        links:
-            - mysql
-        depends_on:
-            - mysql
-        environment:
-            - PMA_ARBITRARY=1
-            - PMA_HOST=mysql
-            - MYSQL_USER=root
-            - MYSQL_PASSWORD=Mypassword
-            - MYSQL_ROOT_PASSWORD=Mypassword
-        ports:
-            - 8085:80
-
     apache_img_1:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con_1
         build: ./web/1
@@ -63,6 +32,7 @@ services:
         networks:
             public_net:
                 ipv4_address: ${APACHE_3_IP}
+
 
     haproxy_img:
         build: ./haproxy
