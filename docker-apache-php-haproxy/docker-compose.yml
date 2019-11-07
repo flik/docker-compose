@@ -8,6 +8,8 @@ services:
             - 3306
         ports:
             - 3306:3306
+        volumes:
+            - ./mysql:/var/lib/mysql
         environment:
             - MYSQL_DATABASE=xone
             - MYSQL_USER=xone
